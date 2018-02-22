@@ -18,6 +18,7 @@ you will need an account but fret not you can just use your google or facebook c
 The first thing we need to do is get the headers from the file:
 
 *suran@Kenobi:~/Documents$ head -1 london_crime_by_lsoa.csv*
+
 *lsoa_code,borough,major_category,minor_category,value,year,month*
 
 Take note of the headers as you will need them later. 
@@ -25,7 +26,9 @@ Take note of the headers as you will need them later.
 Now we finally strip the headers from the csv file as we do not need it when loading the data into the hive table.
 
 *suran@Kenobi:~/Documents$ sed '1d' london_crime_data.csv >london_crime_clean.csv*
+
 *suran@Kenobi:~/Documents$ head -1 london_crime_clean.csv* 
+
 *E01001116,Croydon,Burglary,Burglary in Other Buildings,0,2016*
 
 With our clean csv file in place we are ready to create the hive table and load the data
