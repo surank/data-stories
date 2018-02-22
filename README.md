@@ -95,7 +95,9 @@ Bada Boom Bada Bing! Your data is now ready to be analysed.
 From a command line  execute the following:
 
 *pip install pandas*
+
 *pip install pyhive*
+
 *pip install plotly*
 
 ***Installing Jupyer Notebook***
