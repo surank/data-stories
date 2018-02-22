@@ -93,7 +93,7 @@ hive> create table londoncrimes stored as orc as Select * from crimes;
 
 Bada Boom Bada Bing! Your data is now ready to be analysed. 
 
-*** Installing plotly, Pandas and Pyhive.
+*** Installing plotly, Pandas and Pyhive***
 
 From a command line  execute the following:
 
