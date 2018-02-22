@@ -17,19 +17,19 @@ you will need an account but fret not you can just use your google or facebook c
 
 The first thing we need to do is get the headers from the file:
 
-*suran@Kenobi:~/Documents$ head -1 london_crime_by_lsoa.csv*
+```suran@Kenobi:~/Documents$ head -1 london_crime_by_lsoa.csv```
 
-*lsoa_code,borough,major_category,minor_category,value,year,month*
+```*lsoa_code,borough,major_category,minor_category,value,year,month*```
 
 Take note of the headers as you will need them later. 
 
 Now we finally strip the headers from the csv file as we do not need it when loading the data into the hive table.
 
-*suran@Kenobi:~/Documents$ sed '1d' london_crime_data.csv >london_crime_clean.csv*
+```suran@Kenobi:~/Documents$ sed '1d' london_crime_data.csv >london_crime_clean.csv```
 
-*suran@Kenobi:~/Documents$ head -1 london_crime_clean.csv* 
+```suran@Kenobi:~/Documents$ head -1 london_crime_clean.csv```
 
-*E01001116,Croydon,Burglary,Burglary in Other Buildings,0,2016*
+```E01001116,Croydon,Burglary,Burglary in Other Buildings,0,2016```
 
 With our clean csv file in place we are ready to create the hive table and load the data
 
@@ -37,55 +37,55 @@ With our clean csv file in place we are ready to create the hive table and load 
 
 Firstly, let’s create an external table so we can load the csv file, after that we create an internal table and load the data from the external table.
 
-hive> create database london_crimes;
+```hive> create database london_crimes;```
 
-OK
+```OK```
 
-Time taken: 5.054 seconds
+```Time taken: 5.054 seconds```
 
-hive> use london_crimes;
+```hive> use london_crimes;```
 
-OK
+```OK```
 
-Time taken: 0.046 seconds
+```Time taken: 0.046 seconds```
 
-hive> create table if not exists crimes (
-    > lsoa_code string,
-    > borough string,
-    > major_category string,
-    > minor_category string,
-    > value int,
-    > year int)
-    > row format delimited
-    > fields terminated by ','
-    > stored as textfile;
+```hive> create table if not exists crimes (```
+    ```> lsoa_code string,```
+   ``` > borough string,```
+   ``` > major_category string,```
+   ``` > minor_category string,```
+    ```> value int,```
+    ```> year int)```
+    ```> row format delimited```
+    ```> fields terminated by ','```
+    ```> stored as textfile;```
 
-OK
+```OK```
 
-Time taken: 0.633 seconds
+```Time taken: 0.633 seconds```
 
 let’s load the csv data:
 
-hive> load data local inpath '/home/suran/Documents/london_crime_clean.csv' overwrite into table crimes;
+```hive> load data local inpath '/home/suran/Documents/london_crime_clean.csv' overwrite into table crimes;```
 
-Loading data to table london_crimes.crimes
+```Loading data to table london_crimes.crimes```
 
-OK
+```OK```
 
 
-Time taken: 14.429 seconds
-hive> select * from crimes limit 10;
+```Time taken: 14.429 seconds```
+```hive> select * from crimes limit 10;```
 
-OK
+```OK```
 
-E01001116 Croydon Burglary Burglary in Other Buildings 0 2016
+```E01001116 Croydon Burglary Burglary in Other Buildings 0 2016```
 
-E01001646 Greenwich Violence Against the Person Other violence 0 2016
+```E01001646 Greenwich Violence Against the Person Other violence 0 2016```
 
-E01000677 Bromley Violence Against the Person Other violence 0 2015
-....
+```E01000677 Bromley Violence Against the Person Other violence 0 2015```
 
-Time taken: 1.935 seconds, Fetched: 10 row(s);
+
+```Time taken: 1.935 seconds, Fetched: 10 row(s);```
 
 looking good finally we can create the hive managed orc table:
 
@@ -97,11 +97,13 @@ Bada Boom Bada Bing! Your data is now ready to be analysed.
 
 From a command line  execute the following:
 
-pip install pandas
+```pip install pandas```
 
-pip install pyhive
+```pip install pyhive```
 
-pip install plotly
+```pip install plotly```
+
+```pip install cufflinks```
 
 ***Installing Jupyer Notebook***
 
