@@ -85,23 +85,23 @@ E01001646 Greenwich Violence Against the Person Other violence 0 2016
 E01000677 Bromley Violence Against the Person Other violence 0 2015
 ....
 
-Time taken: 1.935 seconds, Fetched: 10 row(s)
+Time taken: 1.935 seconds, Fetched: 10 row(s);
 
 looking good finally we can create the hive managed orc table:
 
-hive> create table londoncrimes stored as orc as Select * from crimes;
+```hive> create table londoncrimes stored as orc as Select * from crimes;```
 
 Bada Boom Bada Bing! Your data is now ready to be analysed. 
 
-*** Installing plotly, Pandas and Pyhive***
+***Installing plotly, Pandas and Pyhive***
 
 From a command line  execute the following:
 
-*pip install pandas*
+pip install pandas
 
-*pip install pyhive*
+pip install pyhive
 
-*pip install plotly*
+pip install plotly
 
 ***Installing Jupyer Notebook***
 
