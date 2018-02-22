@@ -107,6 +107,3 @@ Now go forth! and learn.
 
 Ps - You will need to use nbviewer if you want to view the plots as github does not render the iframes. 
 
-[London Crimes NoteBook] (https://nbviewer.jupyter.org/github/surank/data-stories/blob/lodon-crimes/Crime.ipynb)
-
-
