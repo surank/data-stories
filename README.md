@@ -105,6 +105,10 @@ From a command line  execute the following:
 
 ```pip install cufflinks```
 
+You will need to make sure the hiveserver2 service is running as this is what pyhive connects to:
+
+```hive --service hiveserver2```
+
 ***Installing Jupyer Notebook***
 
 [How To Install Jupyter Notebook ](http://jupyter.readthedocs.io/en/latest/install.html)
